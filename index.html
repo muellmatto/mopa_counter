@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            MOPA
+        </title>
+<style>
+    * { cursor: none; }
+    body {
+        color: rgb(100,100,100);
+        background: rgb(234, 138, 165);
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+    main {
+        font-family: monospace;
+        font-size: 2vw;
+    }
+</style>
+    </head>
+    <body>
+        <main>
+        </main>
+         <script src="moment.min.js"></script>
+        <script>
+            "use strict";
+
+            // const target_date = new Date(2021, 1, 29, 14 ,0, 0, 0);
+            const target_date_string = "06.01.2022-09:00:00";
+            const target_date = moment(target_date_string, "DD.MM.YYYY-hh:mm:ss");
+            const main = document.querySelector("main");
+            var timer;
+
+            function update_timer () {
+                let now = moment();
+                let diff = moment.duration(target_date - now);
+                if (diff < 0) {
+                    clearInterval(timer);
+                    window.location.href = "open.html";
+                }
+                let days = diff.days();
+                let hours = diff.hours();
+                let minutes = diff.minutes();
+                let seconds = diff.seconds();
+                main.innerHTML =
+                    "Noch "
+                    + days + " Tage, "
+                    + hours + " Stunden, "
+                    + minutes + " Minuten, "
+                    + seconds + " Sekunden";
+            }
+
+            timer = setInterval(update_timer, 1000)
+        </script>
+    </body>
+</html>
