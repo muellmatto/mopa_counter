@@ -18,6 +18,11 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 body {
     /* cursor: none; */
 
@@ -27,28 +32,50 @@ body {
     width: 100vw;
     height: 100vh;
     margin: 0;
-    display: grid;
-    justify-content: center;
-    align-content: center;
 }
 
 .mopa_is_closed {
     font-family: "DM Mono", monospace;
     font-size: max(1.3rem, 2.5vw);
+
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
 .mopa_is_open {
     font-family: "DM Sans", sans-serif;
 
+    width: 100%;
+    height: 100%;
+    margin: auto;
     display: grid;
-    grid-template-rows: 1fr;
+    grid-gap: min(2rem, 5%);
+    grid-template-columns: 1fr 4fr 4fr 1fr;
+    grid-template-rows: 3fr 1fr 3fr 3fr;
+    grid-template-areas:
+        "... ...  ...  ..."
+        "... logo text ..."
+        "... logo qr   ... "
+        "... ...  ...  ...";
 }
-.mopa_is_open > h1 {
-    font-size: max(1.3rem, 3vw);
+.mopa_is_open > .text {
+    grid-area: text;
+    font-size: max(1.3rem, 4.5vw);
     font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 0.3rem;
 }
-.mopa_is_open > img {
-    max-width: 100%;
-	min-width: 33%;
-	justify-self: end;
+.mopa_is_open > .img_logo {
+    grid-area: logo;
+    justify-self: end;
+}
+.mopa_is_open > .img_qr {
+    grid-area: qr;
+	justify-self: start;
+    height: calc(100% - 1rem);
+    max-height: calc(100% - 1rem);
 }

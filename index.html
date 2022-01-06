@@ -10,15 +10,16 @@
     </head>
     <body>
         <main class="mopa_is_closed">
+            <section></section>
         </main>
          <script src="moment.min.js"></script>
         <script>
             "use strict";
 
             // const target_date = new Date(2021, 1, 29, 14 ,0, 0, 0);
-            const target_date_string = "29.01.2022-14:00:00";
+            const target_date_string = "07.01.2022-09:00:00";
             const target_date = moment(target_date_string, "DD.MM.YYYY-hh:mm:ss");
-            const main = document.querySelector("main");
+            const counter = document.querySelector("section");
             var timer;
 
             function update_timer () {
@@ -32,7 +33,7 @@
                 let hours = diff.hours();
                 let minutes = diff.minutes();
                 let seconds = diff.seconds();
-                main.innerHTML =
+                counter.innerHTML =
                     "Noch "
                     + "<span style=\"white-space: nowrap;\">" + days + " Tage, " + "</span> "
                     + "<span style=\"white-space: nowrap;\">" + hours + " Stunden, " + "</span> "
