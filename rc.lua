@@ -101,7 +101,7 @@ local session = require "session"
 local undoclose = require "undoclose"
 
 -- Add command to list tab history items
-local tabhistory = require "tabhistory"
+-- local tabhistory = require "tabhistory"
 
 -- Add command to list open tabs
 local tabmenu = require "tabmenu"
@@ -142,8 +142,8 @@ local search = require "search"
 local taborder = require "taborder"
 
 -- Save web history
-local history = require "history"
-local history_chrome = require "history_chrome"
+-- local history = require "history"
+-- local history_chrome = require "history_chrome"
 
 local help_chrome = require "help_chrome"
 local binds_chrome = require "binds_chrome"
