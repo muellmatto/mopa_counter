@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(DMMono-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(DMSans-Regular.ttf) format('truetype');
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* cursor: none; */
+
+    color: rgb(0,0,0);
+    background: rgb(255, 173, 250);
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.mopa_is_closed {
+    font-family: "DM Mono", monospace;
+    font-size: max(1.3rem, 2.5vw);
+}
+
+.mopa_is_open {
+    font-family: "DM Sans", sans-serif;
+
+    display: grid;
+    grid-template-rows: 1fr;
+}
+.mopa_is_open > h1 {
+    font-size: max(1.3rem, 3vw);
+    font-weight: 400;
+}
+.mopa_is_open > img {
+    max-width: 100%;
+	min-width: 33%;
+	justify-self: end;
+}

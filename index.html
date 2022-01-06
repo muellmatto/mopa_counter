@@ -4,33 +4,19 @@
         <title>
             MOPA
         </title>
-<style>
-    * { cursor: none; }
-    body {
-        color: rgb(100,100,100);
-        background: rgb(234, 138, 165);
-        width: 100vw;
-        height: 100vh;
-        display: grid;
-        display: grid;
-        justify-content: center;
-        align-content: center;
-    }
-    main {
-        font-family: monospace;
-        font-size: 2vw;
-    }
-</style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/mopa_counter.css">
     </head>
     <body>
-        <main>
+        <main class="mopa_is_closed">
         </main>
          <script src="moment.min.js"></script>
         <script>
             "use strict";
 
             // const target_date = new Date(2021, 1, 29, 14 ,0, 0, 0);
-            const target_date_string = "06.01.2022-09:00:00";
+            const target_date_string = "29.01.2022-14:00:00";
             const target_date = moment(target_date_string, "DD.MM.YYYY-hh:mm:ss");
             const main = document.querySelector("main");
             var timer;
@@ -48,10 +34,10 @@
                 let seconds = diff.seconds();
                 main.innerHTML =
                     "Noch "
-                    + days + " Tage, "
-                    + hours + " Stunden, "
-                    + minutes + " Minuten, "
-                    + seconds + " Sekunden";
+                    + "<span style=\"white-space: nowrap;\">" + days + " Tage, " + "</span> "
+                    + "<span style=\"white-space: nowrap;\">" + hours + " Stunden, " + "</span> "
+                    + "<span style=\"white-space: nowrap;\">" + minutes + " Minuten, " + "</span> "
+                    + "<span style=\"white-space: nowrap;\">" + seconds + " Sekunden" + "</span>";
             }
 
             timer = setInterval(update_timer, 1000)
